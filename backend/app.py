@@ -17,6 +17,7 @@ from models.Careers import Careers
 
 from apis import api
 from apis.FindCareersResource import FindCareersResource
+from apis.FindJobsResource import FindJobsResource
 
 #INITIALIZE APP AND PLUGINS
 app = Flask(__name__)
@@ -35,6 +36,7 @@ app.config['MAIL_PORT'] = 465
 
 #CONNECT API RESOURCES
 api.add_resource(FindCareersResource, '/api/find_careers')
+api.add_resource(FindJobsResource, '/api/find_jobs')
 
 #INITIALIZE FLASK EXTENSIONS
 db.init_app(app)
